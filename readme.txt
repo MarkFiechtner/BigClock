@@ -7,6 +7,9 @@ interrupted" by power loss and never ruin the MicroSD card as it uses the piCore
 which only reads from MicroSD card at boot and only writes when told to do so.  The
 clock plugs into the wall (AC mains) for power so no batteries to worry about.
 
+Please note that I use this on piCore OS but the python3 code was tested on Buster
+(Raspian), too.
+
 
 
 This is the hardware I used -
@@ -53,10 +56,12 @@ cd ~
 mkdir src
 mkdir src/BigClock
 mkdir src/BigClock/pyLDD
+mkdir src/BigClock/Testing
 
 echo 'home/tc/src' >> /opt/.filetool.lst
 echo 'home/tc/src/BigClock' >> /opt/.filetool.lst
 echo 'home/tc/src/BigClock/pyLDD' >> /opt/.filetool.lst
+echo 'home/tc/src/BigClock/Testing' >> /opt/.filetool.lst
 
 tce-load -wi python3.6
 tce-load -wi python3.6-RPi.GPIO
