@@ -1,0 +1,17 @@
+
+PICore sucks!  Any modern Linux should have an "easy" way to set the timezone!
+
+I got the timezone string from:
+https://oldwiki.archive.openwrt.org/doc/uci/system#time_zones
+
+Mount the sd card:
+sudo mount /dev/mm...p1 /mnt/mm...p1
+
+Edit each of these in turn:
+sudo nano /mnt/mm...p1/cmdline.txt
+and
+sudo nano /mnt/mm...p1/cmdline3.txt
+
+for Dallas, TX, USA add this to the end of the line:
+ tz=CST6CDT,M3.2.0,M11.1.0
+

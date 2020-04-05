@@ -1,0 +1,14 @@
+
+PICore sucks!  Any modern Linux should have an "easy" way to set the hostname!
+
+Mount the sd card:
+sudo mount /dev/mm...p1 /mnt/mm...p1
+
+Edit each of these in turn:
+sudo nano /mnt/mm...p1/cmdline.txt
+and
+sudo nano /mnt/mm...p1/cmdline3.txt
+
+add this to the end of the line: (XXXX is the new hostname)
+ host=XXXX
+

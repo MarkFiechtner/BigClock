@@ -1,0 +1,2 @@
+
+To use any of these tests, copy the file to the BigClock directory and execute it from there.
