@@ -24,13 +24,15 @@
 
 
 # see how fast the Raspbery PI Zero W can toggle a pin.
-from pyLDD import GPIOPinOut
+from pyLDD import gpioOutPin
 
 from TimeIt import TIMER
 
-pin = GPIOPinOut(21)
+pin = gpioOutPin(21)
 
-reps = 10000000
+reps = 100000
+
+print("{} reps".format(reps))
 
 try:
     with TIMER(txt="", prnt=TIMER.ALL, verbose=True):
