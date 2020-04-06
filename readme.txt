@@ -10,29 +10,11 @@ clock plugs into the wall (AC mains) for power so no batteries to worry about.
 Please note that I use this on piCore OS but the python3 code was tested on Buster
 (Raspian), too.
 
+The hardware directory contains information about the hardware I used to complete
+this project.
+The Testing directory contains some files I used to test during debug.
+The pyLDD directory contains some low level hardware control stuff.
 
-
-This is the hardware I used -
-
-Raspberry PI Zero W (there is NO dependency on this so use what you want)
-32GB MicroSD card (way too big; but, I got it cheap)
-SparkFun Logic Level Converter - Bi-Directional (https://www.sparkfun.com/products/12009)
-SparkFun ATX Power Connector Breakout Kit - 12V/5V (4-pin) (https://www.sparkfun.com/products/15701)
-(4) 7-Segment Display - 6.5" (Red) (https://www.sparkfun.com/products/8530)
-(4) SparkFun Large Digit Driver (https://www.sparkfun.com/products/13279)
-(1) Jumper Wire - 0.1", 6-pin, 6" (https://www.sparkfun.com/products/10371)
-(2) Jumper Wire - 0.1", 6-pin, 12" (https://www.sparkfun.com/products/10376)
-Another 6-pin jumper to connect to the first digit (4", 6" or 12", depending on your need)
-
-NOTE: The PI has power supplied to the GPIO header by the 5v portion of the power supply
-NOTE: The PI Zero W has on-board wifi which attaches to my home network to get the time
-	(NTP) and allow headless operation while supporting an SSH command line
-
-I added some jumper wires and soldered some headers to create the proper circuits.
-I use one of the 7-segment displays (minute 10's) upside down.  This allows me to blink the
-	two decimal points (hour 1's, minute 10's) as a second indicator.
-I used the two 12" jumpers to attach the upside down display (minute 10's) to the previous
-	(hour 1's) and next (minute 1's) displays.
 
 
 Building the Pi Zero W running piCore and the rest of this stuff - 
@@ -82,7 +64,8 @@ If this is NOT right, change the definitions or the wiring.
 
 
 
-In a PC command prompt, I use pscp to copy all the source to the destination PI.
+In a PC command prompt, I use pscp to copy all the source to the destination PI.  Something like:
+pscp -batch -pw piCore d:BigClock/*.py tc@192.168.1.xxx:/src/BigClock
 
 NOTE: I have it wrapped by an interactive python script (not included in this project):
 
